@@ -4,7 +4,7 @@ fun main() {
     If and if-else statements
      */
 
-    var finishedHomework = true
+    val finishedHomework = true
     if (finishedHomework) {
         println("Can go to the cinema")
     }
