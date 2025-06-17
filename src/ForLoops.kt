@@ -33,7 +33,7 @@ fun main() {
     }
     println()
 
-    // Iterates b value down to b value, in steps of c value
+    // Iterates b value down to a value, in steps of c value
 
     for (i in b downTo a step c) {
         print("$i ")
