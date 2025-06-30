@@ -12,6 +12,9 @@ class Cat(val name: String) : Animal {
     }
 }
 
+// I was having a hard time grasping the usefulness of interfaces, but this function helps.
+// It takes an interface as an argument, and has different outputs based on which class
+// within that interface the object is derived from.
 fun play(animal: Animal) {
     when (animal) {
         is Dog -> animal.retrieve("stick")
