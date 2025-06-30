@@ -1,4 +1,4 @@
-class Dog(val name: String) {
+class Doggie(val name: String) {
 
     var hunger = 62
 
@@ -28,9 +28,9 @@ class User(var name: String) {
 
 fun main() {
 
-    val dog = Dog("Rex")
+    val doggie = Doggie("Rex")
 
-    dog.feed() // Feeding Rex
+    doggie.feed() // Feeding Rex
 
     val user = User("Alpha") // creates User object with name "Alpha"
 
