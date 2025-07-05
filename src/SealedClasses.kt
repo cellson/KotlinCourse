@@ -1,3 +1,41 @@
+/*
+Sealed classes and when expressions
+There is one important consequence of using sealed classes. You might remember that using when as an
+expression, you need to specify an else block so that there is always something returned.
+
+fun constructLabel(role: String, name: String): String {
+    return when (role) {
+        "ceo" -> "The boss"
+        "manager" -> "Manager $name"
+        "worker" -> name
+        else -> "Unknown role"
+    }
+}
+
+fun main() {
+val label = constructLabel("manager", "Leonard")
+println(label) // Manager Leonard
+}
+
+There are exceptions to this rule. As demonstrated previously, you do not need to specify else if you
+when expression with an enum class, and you cover all the possible values.
+
+enum class Role {
+    CEO,
+    MANAGER,
+    WORKER
+}
+
+fun constructLabel(role: Role, name: String): String {
+    return when (role) {
+        CEO -> "The boss"
+        MANAGER -> "Manager $name"
+
+Another such exception is when you use when with a sealed class value, and you cover all the possible
+subtypes. Take a look at the code below. Since it covers all the possible subtypes of Role in a when
+expression, you do not need to specify an else block. It is possible thanks to the sealed modifier.
+ */
+
 sealed class Role
 class CeoRole(): Role()
 class ManagerRole(val name: String): Role()
